@@ -1,0 +1,40 @@
+# Local hooks so pre-commit uses exactly the pinned tool versions from uv.lock / package-lock.json.
+# Install with: make hooks
+repos:
+  - repo: local
+    hooks:
+      - id: ruff-check
+        name: ruff check
+        entry: bash -c 'cd backend && uv run ruff check --fix .'
+        language: system
+        files: ^backend/.*\.py$
+        pass_filenames: false
+      - id: ruff-format
+        name: ruff format
+        entry: bash -c 'cd backend && uv run ruff format .'
+        language: system
+        files: ^backend/.*\.py$
+        pass_filenames: false
+      - id: mypy
+        name: mypy
+        entry: bash -c 'cd backend && uv run mypy'
+        language: system
+        files: ^backend/.*\.py$
+        pass_filenames: false
+      - id: eslint-prettier
+        name: eslint + prettier
+        entry: bash -c 'cd frontend && npm run lint'
+        language: system
+        files: ^frontend/.*\.(ts|tsx|js|json|css)$
+        pass_filenames: false
+      - id: tsc
+        name: tsc --noEmit
+        entry: bash -c 'cd frontend && npm run typecheck'
+        language: system
+        files: ^frontend/.*\.(ts|tsx)$
+        pass_filenames: false
+      - id: no-env-file
+        name: never commit .env
+        entry: bash -c 'echo ".env must not be committed"; exit 1'
+        language: system
+        files: (^|/)\.env$

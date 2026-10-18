@@ -1,0 +1,33 @@
+# Secrets
+.env
+*.pem
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+.mypy_cache/
+.ruff_cache/
+.pytest_cache/
+.coverage
+htmlcov/
+backend/models_cache/
+backend/app/ml/artifacts/
+
+# Node
+node_modules/
+frontend/dist/
+frontend/test-results/
+frontend/playwright-report/
+frontend/blob-report/
+*.tsbuildinfo
+
+# Generated
+backend/openapi.json
+eval/reports/*.md
+!eval/reports/.gitkeep
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/

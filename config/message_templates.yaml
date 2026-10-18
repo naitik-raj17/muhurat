@@ -1,0 +1,25 @@
+# Guest-facing message templates per language. Placeholders: {guest}, {couple}, {event},
+# {date}, {venue}. Replies are free text ("yes", "haan", "नहीं", "+2"...) and are parsed safely.
+templates:
+  invite:
+    en:
+      subject: "You're invited: {event} - {couple}"
+      body: >-
+        Dear {guest}, {couple} warmly invite you to the {event} on {date} at {venue}.
+        Please reply YES or NO (and +N if others are joining you).
+    hi:
+      subject: "निमंत्रण: {event} - {couple}"
+      body: >-
+        प्रिय {guest}, {couple} आपको {date} को {venue} में {event} के लिए सादर आमंत्रित करते हैं।
+        कृपया हाँ या नहीं में उत्तर दें (साथ आने वालों के लिए +N लिखें)।
+  reminder:
+    en:
+      subject: "Reminder: please RSVP for the {event}"
+      body: >-
+        Dear {guest}, a gentle reminder to let {couple} know if you can join the {event} on
+        {date}. Just reply YES or NO.
+    hi:
+      subject: "अनुस्मारक: {event} के लिए उत्तर दें"
+      body: >-
+        प्रिय {guest}, कृपया {couple} को बताएं कि क्या आप {date} को {event} में आ पाएंगे।
+        बस हाँ या नहीं लिखें।

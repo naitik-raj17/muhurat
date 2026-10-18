@@ -1,0 +1,130 @@
+# `docker compose up` starts the whole stack with mocks for every external service.
+name: wedding-ai
+
+x-backend-env: &backend-env
+  APP_ENV: ${APP_ENV:-dev}
+  DATABASE_URL: postgresql+asyncpg://wedding:wedding@postgres:5432/wedding
+  REDIS_URL: redis://redis:6379/0
+  MINIO_ENDPOINT: minio:9000
+  TEMPORAL_HOST: temporal:7233
+  # Phase 3: Temporal is the one job system (the API's in-process outbox worker stays off).
+  JOB_BACKEND: temporal
+
+services:
+  postgres:
+    image: pgvector/pgvector:0.8.7-pg16
+    environment:
+      POSTGRES_USER: wedding
+      POSTGRES_PASSWORD: wedding
+      POSTGRES_DB: wedding
+    ports: ["5432:5432"]
+    volumes: [pgdata:/var/lib/postgresql/data]
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U wedding -d wedding"]
+      interval: 3s
+      timeout: 3s
+      retries: 30
+
+  redis:
+    image: redis:7.4.11-alpine
+    ports: ["6379:6379"]
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 3s
+      timeout: 3s
+      retries: 30
+
+  minio:
+    # Official minio/minio images are no longer published; Chainguard's build, pinned by digest.
+    image: cgr.dev/chainguard/minio@sha256:2136d593beacf4461187035eca949fe49abd589d5079735025c711ca58fee0c8
+    command: ["server", "/data", "--console-address", ":9001"]
+    environment:
+      MINIO_ROOT_USER: minioadmin
+      MINIO_ROOT_PASSWORD: minioadmin
+    ports: ["9000:9000", "9001:9001"]
+    volumes: [miniodata:/data]
+    healthcheck:
+      test: ["CMD", "bash", "-c", "echo > /dev/tcp/127.0.0.1/9000"]
+      interval: 3s
+      timeout: 3s
+      retries: 30
+
+  temporal:
+    # Temporal dev server (single binary, SQLite persistence) with its web UI on :8233.
+    image: temporalio/temporal:1.9.1
+    command: ["server", "start-dev", "--ip", "0.0.0.0", "--db-filename", "/data/temporal.db"]
+    ports: ["7233:7233", "8233:8233"]
+    volumes: [temporaldata:/data]
+    user: root
+    healthcheck:
+      test: ["CMD", "temporal", "operator", "cluster", "health", "--address", "127.0.0.1:7233"]
+      interval: 3s
+      timeout: 3s
+      retries: 40
+
+  api:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    env_file:
+      - path: .env
+        required: false
+    environment:
+      <<: *backend-env
+    command: >
+      sh -c "alembic upgrade head &&
+             uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload --reload-dir /app/app"
+    ports: ["8000:8000"]
+    volumes:
+      - ./backend/app:/app/app
+      - ./backend/seed:/app/seed
+      - ./backend/migrations:/app/migrations
+      - ./config:/config:ro
+      - hfcache:/home/app/.cache
+    depends_on:
+      postgres: {condition: service_healthy}
+      redis: {condition: service_healthy}
+      minio: {condition: service_healthy}
+      temporal: {condition: service_healthy}
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request;urllib.request.urlopen('http://127.0.0.1:8000/health/live')"]
+      interval: 5s
+      timeout: 3s
+      retries: 30
+
+  worker:
+    # Temporal worker: outbox drain, reminders, per-wedding agent workflows.
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    env_file:
+      - path: .env
+        required: false
+    environment:
+      <<: *backend-env
+    command: ["python", "-m", "app.workflows.worker"]
+    ports: ["9100:9100"]  # worker Prometheus metrics
+    volumes:
+      - ./backend/app:/app/app
+      - ./config:/config:ro
+      - hfcache:/home/app/.cache
+    depends_on:
+      api: {condition: service_healthy}  # migrations have run
+      temporal: {condition: service_healthy}
+
+  frontend:
+    build:
+      context: ./frontend
+    environment:
+      API_PROXY_TARGET: http://api:8000
+    ports: ["5173:5173"]
+    volumes:
+      - ./frontend/src:/app/src
+    depends_on:
+      api: {condition: service_healthy}
+
+volumes:
+  pgdata:
+  miniodata:
+  temporaldata:
+  hfcache:

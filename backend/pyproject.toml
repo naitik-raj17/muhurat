@@ -1,0 +1,95 @@
+[project]
+name = "wedding-ai"
+version = "0.1.0"
+description = "AI operating layer for wedding planning companies (CATI AI assignment)"
+requires-python = ">=3.12,<3.13"
+# Exact pins. Update deliberately with `uv add pkg==x.y.z` and re-run the test suite.
+dependencies = [
+    "alembic==1.20.0",
+    "argon2-cffi==25.1.0",
+    "asyncpg==0.32.0",
+    "cryptography==50.0.2",
+    "email-validator==2.3.0",
+    "faker==40.43.0",
+    "fastapi==0.143.2",
+    "httpx==0.28.1",
+    "minio==7.2.20",
+    "numpy==2.5.4",
+    "openpyxl==3.1.5",
+    "pgvector==0.5.1",
+    "phonenumbers==9.0.41",
+    "prometheus-client==0.26.0",
+    "pydantic==2.14.1",
+    "pydantic-settings==2.16.0",
+    "pyjwt==2.15.1",
+    "pypdf==6.20.1",
+    "python-docx==1.2.0",
+    "python-multipart==0.0.32",
+    "pyyaml==6.0.3",
+    "redis==8.1.0",
+    "reportlab==5.0.1",
+    "scikit-learn==1.9.1",
+    "sentence-transformers==6.1.0",
+    "sentry-sdk==2.72.0",
+    "sqlalchemy[asyncio]==2.1.4",
+    "structlog==26.1.0",
+    "temporalio==1.33.0",
+    "torch==2.14.1",
+    "uvicorn[standard]==0.54.0",
+]
+
+[dependency-groups]
+dev = [
+    "mypy==2.4.0",
+    "pre-commit==4.7.0",
+    "pytest==9.1.1",
+    "pytest-asyncio==1.4.0",
+    "ruff==0.17.1",
+    "types-pyyaml==6.0.12.20260906",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+extend-exclude = ["migrations/versions"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP", "N", "S", "ASYNC", "RUF", "SIM", "PT"]
+ignore = [
+    "S101",   # assert is fine in tests
+    "B008",   # FastAPI Depends() in defaults is the documented idiom
+    "N818",   # domain errors read better as NotFound, Forbidden, ...
+    "RUF001", # Hindi text in templates/seed data is intentional
+    "RUF002",
+    "RUF003",
+]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/**" = ["S105", "S106", "S311", "PT018"]
+"seed/**" = ["S311"]
+
+[tool.mypy]
+python_version = "3.12"
+plugins = ["pydantic.mypy"]
+ignore_missing_imports = true
+warn_unused_ignores = true
+packages = ["app"]
+
+[[tool.mypy.overrides]]
+module = ["app.domain.*", "app.services.*"]
+strict = true
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+asyncio_default_fixture_loop_scope = "session"
+asyncio_default_test_loop_scope = "session"
+testpaths = ["tests"]
+
+# CPU-only PyTorch for sentence-transformers: the CUDA build adds several GB to every image.
+[[tool.uv.index]]
+name = "pytorch-cpu"
+url = "https://download.pytorch.org/whl/cpu"
+explicit = true
+
+[tool.uv.sources]
+torch = { index = "pytorch-cpu" }

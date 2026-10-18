@@ -1,0 +1,35 @@
+# Model routing per task. The ONLY place model IDs live (see DECISIONS.md D-004).
+# IDs verified against https://openrouter.ai/api/v1/models on 2026-10-16.
+# Prices are USD per 1M tokens (OpenRouter list price) and are used for cost estimates only.
+usd_to_inr: 88.0
+
+models:
+  fast:
+    id: google/gemini-3.5-flash-lite
+    input_usd_per_mtok: 0.30
+    output_usd_per_mtok: 2.50
+  strong:
+    id: google/gemini-3.1-pro-preview
+    input_usd_per_mtok: 2.00
+    output_usd_per_mtok: 12.00
+  fallback:
+    id: openai/gpt-5-mini
+    input_usd_per_mtok: 0.25
+    output_usd_per_mtok: 2.00
+
+# Task -> model tier. Cheap/fast for simple tasks; strong only where reasoning matters.
+tasks:
+  guest_comm: fast
+  general: fast
+  contract_analysis: strong
+  timeline_reasoning: strong
+
+# Used when the routed model errors (after retries).
+fallback_tier: fallback
+
+embeddings:
+  # Multilingual (Hindi + other Indian languages). all-MiniLM-L6-v2 is English-only.
+  model: sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+  dimensions: 384
+  # Vector hits below this cosine similarity don't count as relevant (tuned on seed data).
+  min_similarity: 0.25

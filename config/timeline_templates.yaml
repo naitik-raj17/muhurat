@@ -1,0 +1,44 @@
+# Default event templates used to draft timelines. Durations in minutes.
+default_buffer_minutes: 15
+default_setup_minutes: 120
+
+events:
+  mehendi:
+    label: Mehendi
+    items:
+      - {title: Decor setup, minutes: 120, kind: setup, vendor_category: decorator}
+      - {title: Guest arrival & welcome drinks, minutes: 45, kind: ceremony}
+      - {title: Mehendi application (bride), minutes: 180, kind: ceremony, vendor_category: mehendi_artist}
+      - {title: Lunch, minutes: 90, kind: meal, vendor_category: caterer}
+      - {title: Music & games, minutes: 90, kind: entertainment, vendor_category: dj}
+  haldi:
+    label: Haldi
+    items:
+      - {title: Decor setup, minutes: 90, kind: setup, vendor_category: decorator}
+      - {title: Haldi ceremony, minutes: 90, kind: ceremony, vendor_category: pandit}
+      - {title: Brunch, minutes: 60, kind: meal, vendor_category: caterer}
+  sangeet:
+    label: Sangeet
+    items:
+      - {title: "Stage, sound & lights setup", minutes: 180, kind: setup, vendor_category: decorator}
+      - {title: Makeup & styling, minutes: 120, kind: prep, vendor_category: makeup}
+      - {title: Guest arrival, minutes: 45, kind: ceremony}
+      - {title: Family performances, minutes: 90, kind: entertainment}
+      - {title: DJ night, minutes: 120, kind: entertainment, vendor_category: dj}
+      - {title: Dinner, minutes: 90, kind: meal, vendor_category: caterer}
+  wedding:
+    label: Wedding
+    items:
+      - {title: Mandap & venue setup, minutes: 180, kind: setup, vendor_category: decorator}
+      - {title: Bridal makeup, minutes: 150, kind: prep, vendor_category: makeup}
+      - {title: Baraat, minutes: 60, kind: ceremony, vendor_category: dj}
+      - {title: Jaimala, minutes: 30, kind: ceremony, vendor_category: photographer}
+      - {title: Pheras & rituals, minutes: 120, kind: ceremony, vendor_category: pandit}
+      - {title: Dinner, minutes: 120, kind: meal, vendor_category: caterer}
+  reception:
+    label: Reception
+    items:
+      - {title: Venue setup, minutes: 150, kind: setup, vendor_category: decorator}
+      - {title: Couple styling, minutes: 90, kind: prep, vendor_category: makeup}
+      - {title: Couple entry & greetings, minutes: 90, kind: ceremony, vendor_category: photographer}
+      - {title: Dinner & music, minutes: 150, kind: meal, vendor_category: caterer}
