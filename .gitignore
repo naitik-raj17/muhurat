@@ -24,7 +24,6 @@ frontend/blob-report/
 
 # Generated
 backend/openapi.json
-eval/reports/*.md
 !eval/reports/.gitkeep
 
 # OS / editor

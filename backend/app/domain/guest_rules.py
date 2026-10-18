@@ -24,18 +24,24 @@ class RsvpIntent(BaseModel):
     confidence: float = Field(ge=0, le=1)
 
 
+# \b does not work for Devanagari (vowel signs are not \w), so Hindi words only match at the
+# start of a word: "हाँ" (yes) must not match inside "कहाँ" (where).
+_DEV = r"(?<![\u0900-\u097F])"
 _YES = re.compile(
     r"\b(yes|yeah|yep|sure|coming|will come|will attend|attending|accept|confirmed?|definitely|"
-    r"haan|haa|ha ji|haanji|zaroor|zarur|aayenge|aaenge|aa rahe)\b|हाँ|हां|ज़रूर|जरूर|आएंगे|आएँगे|आ रहे",
+    r"haan|haa|ha ji|haanji|zaroor|zarur|aayenge|aaenge|aa rahe)\b"
+    rf"|{_DEV}(?:हाँ|हां|ज़रूर|जरूर|आएंगे|आएँगे|आ रहे)",
     re.IGNORECASE,
 )
 _NO = re.compile(
     r"\b(no|nope|not coming|can'?t come|cannot come|won'?t|unable|decline|regret|sorry|nahi|nahin|"
-    r"nahi aa)\b|नहीं|नही|माफ़|असमर्थ",
+    r"nahi aa)\b"
+    rf"|{_DEV}(?:नहीं|नही|माफ़|असमर्थ)",
     re.IGNORECASE,
 )
 _MAYBE = re.compile(
-    r"\b(maybe|may be|not sure|unsure|might|will try|try to|shayad|pata nahi)\b|शायद|पता नहीं",
+    r"\b(maybe|may be|not sure|unsure|might|will try|try to|shayad|pata nahi)\b"
+    rf"|{_DEV}(?:शायद|पता नहीं)",
     re.IGNORECASE,
 )
 # "+2", "with 2", "2 more" = extra guests; "we are 3 people" / "3 log" / "3 लोग" = party size.

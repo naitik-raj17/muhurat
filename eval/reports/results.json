@@ -1,0 +1,1528 @@
+{
+  "vendor_matching": {
+    "n_queries": 50,
+    "catalogue_size": 316,
+    "mean_relevant": 8.34,
+    "overall": {
+      "p5": 0.784,
+      "p5_max": 0.792,
+      "p5_capped": 0.992,
+      "r10": 0.867690438216754,
+      "r10_max": 0.8881877187140346,
+      "mrr": 0.9866666666666667
+    },
+    "by_kind": {
+      "city": {
+        "n": 16,
+        "p5": 0.3625,
+        "p5_max": 0.3625,
+        "p5_capped": 1.0,
+        "r10": 1.0,
+        "r10_max": 1.0,
+        "mrr": 0.9583333333333334
+      },
+      "national": {
+        "n": 26,
+        "p5": 0.9923076923076923,
+        "p5_max": 1.0,
+        "p5_capped": 0.9923076923076923,
+        "r10": 0.760321549795234,
+        "r10_max": 0.7884728856388775,
+        "mrr": 1.0
+      },
+      "national+budget": {
+        "n": 8,
+        "p5": 0.95,
+        "p5_max": 0.975,
+        "p5_capped": 0.975,
+        "r10": 0.952020202020202,
+        "r10_max": 0.9886363636363636,
+        "mrr": 1.0
+      }
+    },
+    "queries": [
+      {
+        "q": "destination venue",
+        "category": "venue",
+        "style": "destination",
+        "city": null,
+        "budget_max": null,
+        "kind": "national",
+        "n_relevant": 12,
+        "p5": 1.0,
+        "p5_capped": 1.0,
+        "r10": 0.8333333333333334,
+        "mrr": 1.0,
+        "p5_max": 1.0,
+        "r10_max": 0.8333333333333334
+      },
+      {
+        "q": "beach venue",
+        "category": "venue",
+        "style": "beach",
+        "city": null,
+        "budget_max": null,
+        "kind": "national",
+        "n_relevant": 10,
+        "p5": 1.0,
+        "p5_capped": 1.0,
+        "r10": 1.0,
+        "mrr": 1.0,
+        "p5_max": 1.0,
+        "r10_max": 1.0
+      },
+      {
+        "q": "palace venue",
+        "category": "venue",
+        "style": "palace",
+        "city": null,
+        "budget_max": null,
+        "kind": "national",
+        "n_relevant": 12,
+        "p5": 1.0,
+        "p5_capped": 1.0,
+        "r10": 0.8333333333333334,
+        "mrr": 1.0,
+        "p5_max": 1.0,
+        "r10_max": 0.8333333333333334
+      },
+      {
+        "q": "garden venue",
+        "category": "venue",
+        "style": "garden",
+        "city": null,
+        "budget_max": 913000,
+        "kind": "national+budget",
+        "n_relevant": 4,
+        "p5": 0.8,
+        "p5_capped": 1.0,
+        "r10": 1.0,
+        "mrr": 1.0,
+        "p5_max": 0.8,
+        "r10_max": 1.0
+      },
+      {
+        "q": "destination venue",
+        "category": "venue",
+        "style": "destination",
+        "city": "Bengaluru",
+        "budget_max": null,
+        "kind": "city",
+        "n_relevant": 2,
+        "p5": 0.4,
+        "p5_capped": 1.0,
+        "r10": 1.0,
+        "mrr": 1.0,
+        "p5_max": 0.4,
+        "r10_max": 1.0
+      },
+      {
+        "q": "palace venue",
+        "category": "venue",
+        "style": "palace",
+        "city": "Hyderabad",
+        "budget_max": null,
+        "kind": "city",
+        "n_relevant": 2,
+        "p5": 0.4,
+        "p5_capped": 1.0,
+        "r10": 1.0,
+        "mrr": 1.0,
+        "p5_max": 0.4,
+        "r10_max": 1.0
+      },
+      {
+        "q": "vegan catering",
+        "category": "caterer",
+        "style": "vegan",
+        "city": null,
+        "budget_max": null,
+        "kind": "national",
+        "n_relevant": 7,
+        "p5": 1.0,
+        "p5_capped": 1.0,
+        "r10": 1.0,
+        "mrr": 1.0,
+        "p5_max": 1.0,
+        "r10_max": 1.0
+      },
+      {
+        "q": "bengali catering",
+        "category": "caterer",
+        "style": "bengali",
+        "city": null,
+        "budget_max": null,
+        "kind": "national",
+        "n_relevant": 11,
+        "p5": 1.0,
+        "p5_capped": 1.0,
+        "r10": 0.9090909090909091,
+        "mrr": 1.0,
+        "p5_max": 1.0,
+        "r10_max": 0.9090909090909091
+      },
+      {
+        "q": "punjabi catering",
+        "category": "caterer",
+        "style": "punjabi",
+        "city": null,
+        "budget_max": null,
+        "kind": "national",
+        "n_relevant": 15,
+        "p5": 1.0,
+        "p5_capped": 1.0,
+        "r10": 0.6666666666666666,
+        "mrr": 1.0,
+        "p5_max": 1.0,
+        "r10_max": 0.6666666666666666
+      },
+      {
+        "q": "south indian catering",
+        "category": "caterer",
+        "style": "south-indian",
+        "city": null,
+        "budget_max": 724000,
+        "kind": "national+budget",
+        "n_relevant": 7,
+        "p5": 1.0,
+        "p5_capped": 1.0,
+        "r10": 1.0,
+        "mrr": 1.0,
+        "p5_max": 1.0,
+        "r10_max": 1.0
+      },
+      {
+        "q": "vegan catering",
+        "category": "caterer",
+        "style": "vegan",
+        "city": "Hyderabad",
+        "budget_max": null,
+        "kind": "city",
+        "n_relevant": 1,
+        "p5": 0.2,
+        "p5_capped": 1.0,
+        "r10": 1.0,
+        "mrr": 1.0,
+        "p5_max": 0.2,
+        "r10_max": 1.0
+      },
+      {
+        "q": "bengali catering",
+        "category": "caterer",
+        "style": "bengali",
+        "city": "Bengaluru",
+        "budget_max": null,
+        "kind": "city",
+        "n_relevant": 2,
+        "p5": 0.4,
+        "p5_capped": 1.0,
+        "r10": 1.0,
+        "mrr": 1.0,
+        "p5_max": 0.4,
+        "r10_max": 1.0
+      },
+      {
+        "q": "minimalist decor",
+        "category": "decorator",
+        "style": "minimalist",
+        "city": null,
+        "budget_max": null,
+        "kind": "national",
+        "n_relevant": 10,
+        "p5": 1.0,
+        "p5_capped": 1.0,
+        "r10": 1.0,
+        "mrr": 1.0,
+        "p5_max": 1.0,
+        "r10_max": 1.0
+      },
+      {
+        "q": "rajasthani decor",
+        "category": "decorator",
+        "style": "rajasthani",
+        "city": null,
+        "budget_max": null,
+        "kind": "national",
+        "n_relevant": 9,
+        "p5": 1.0,
+        "p5_capped": 1.0,
+        "r10": 1.0,
+        "mrr": 1.0,
+        "p5_max": 1.0,
+        "r10_max": 1.0
+      },
+      {
+        "q": "traditional decor",
+        "category": "decorator",
+        "style": "traditional",
+        "city": null,
+        "budget_max": null,
+        "kind": "national",
+        "n_relevant": 11,
+        "p5": 1.0,
+        "p5_capped": 1.0,
+        "r10": 0.9090909090909091,
+        "mrr": 1.0,
+        "p5_max": 1.0,
+        "r10_max": 0.9090909090909091
+      },
+      {
+        "q": "pastel decor",
+        "category": "decorator",
+        "style": "pastel",
+        "city": null,
+        "budget_max": 492000,
+        "kind": "national+budget",
+        "n_relevant": 6,
+        "p5": 1.0,
+        "p5_capped": 1.0,
+        "r10": 1.0,
+        "mrr": 1.0,
+        "p5_max": 1.0,
+        "r10_max": 1.0
+      },
+      {
+        "q": "traditional decor",
+        "category": "decorator",
+        "style": "traditional",
+        "city": "Bengaluru",
+        "budget_max": null,
+        "kind": "city",
+        "n_relevant": 2,
+        "p5": 0.4,
+        "p5_capped": 1.0,
+        "r10": 1.0,
+        "mrr": 1.0,
+        "p5_max": 0.4,
+        "r10_max": 1.0
+      },
+      {
+        "q": "floral decor",
+        "category": "decorator",
+        "style": "floral",
+        "city": "Mumbai",
+        "budget_max": null,
+        "kind": "city",
+        "n_relevant": 1,
+        "p5": 0.2,
+        "p5_capped": 1.0,
+        "r10": 1.0,
+        "mrr": 1.0,
+        "p5_max": 0.2,
+        "r10_max": 1.0
+      },
+      {
+        "q": "traditional photography",
+        "category": "photographer",
+        "style": "traditional",
+        "city": null,
+        "budget_max": null,
+        "kind": "national",
+        "n_relevant": 14,
+        "p5": 1.0,
+        "p5_capped": 1.0,
+        "r10": 0.7142857142857143,
+        "mrr": 1.0,
+        "p5_max": 1.0,
+        "r10_max": 0.7142857142857143
+      },
+      {
+        "q": "cinematic photography",
+        "category": "photographer",
+        "style": "cinematic",
+        "city": null,
+        "budget_max": null,
+        "kind": "national",
+        "n_relevant": 15,
+        "p5": 1.0,
+        "p5_capped": 1.0,
+        "r10": 0.6666666666666666,
+        "mrr": 1.0,
+        "p5_max": 1.0,
+        "r10_max": 0.6666666666666666
+      },
+      {
+        "q": "pre wedding photography",
+        "category": "photographer",
+        "style": "pre-wedding",
+        "city": null,
+        "budget_max": null,
+        "kind": "national",
+        "n_relevant": 15,
+        "p5": 1.0,
+        "p5_capped": 1.0,
+        "r10": 0.5333333333333333,
+        "mrr": 1.0,
+        "p5_max": 1.0,
+        "r10_max": 0.6666666666666666
+      },
+      {
+        "q": "documentary photography",
+        "category": "photographer",
+        "style": "documentary",
+        "city": null,
+        "budget_max": 240000,
+        "kind": "national+budget",
+        "n_relevant": 5,
+        "p5": 1.0,
+        "p5_capped": 1.0,
+        "r10": 1.0,
+        "mrr": 1.0,
+        "p5_max": 1.0,
+        "r10_max": 1.0
+      },
+      {
+        "q": "documentary photography",
+        "category": "photographer",
+        "style": "documentary",
+        "city": "Hyderabad",
+        "budget_max": null,
+        "kind": "city",
+        "n_relevant": 1,
+        "p5": 0.2,
+        "p5_capped": 1.0,
+        "r10": 1.0,
+        "mrr": 1.0,
+        "p5_max": 0.2,
+        "r10_max": 1.0
+      },
+      {
+        "q": "pre wedding photography",
+        "category": "photographer",
+        "style": "pre-wedding",
+        "city": "Bengaluru",
+        "budget_max": null,
+        "kind": "city",
+        "n_relevant": 2,
+        "p5": 0.4,
+        "p5_capped": 1.0,
+        "r10": 1.0,
+        "mrr": 1.0,
+        "p5_max": 0.4,
+        "r10_max": 1.0
+      },
+      {
+        "q": "south indian makeup artist",
+        "category": "makeup",
+        "style": "south-indian",
+        "city": null,
+        "budget_max": null,
+        "kind": "national",
+        "n_relevant": 11,
+        "p5": 1.0,
+        "p5_capped": 1.0,
+        "r10": 0.8181818181818182,
+        "mrr": 1.0,
+        "p5_max": 1.0,
+        "r10_max": 0.9090909090909091
+      },
+      {
+        "q": "bengali makeup artist",
+        "category": "makeup",
+        "style": "bengali",
+        "city": null,
+        "budget_max": null,
+        "kind": "national",
+        "n_relevant": 6,
+        "p5": 1.0,
+        "p5_capped": 1.0,
+        "r10": 1.0,
+        "mrr": 1.0,
+        "p5_max": 1.0,
+        "r10_max": 1.0
+      },
+      {
+        "q": "natural makeup artist",
+        "category": "makeup",
+        "style": "natural",
+        "city": null,
+        "budget_max": null,
+        "kind": "national",
+        "n_relevant": 15,
+        "p5": 1.0,
+        "p5_capped": 1.0,
+        "r10": 0.6666666666666666,
+        "mrr": 1.0,
+        "p5_max": 1.0,
+        "r10_max": 0.6666666666666666
+      },
+      {
+        "q": "hd makeup artist",
+        "category": "makeup",
+        "style": "hd",
+        "city": null,
+        "budget_max": 72000,
+        "kind": "national+budget",
+        "n_relevant": 6,
+        "p5": 1.0,
+        "p5_capped": 1.0,
+        "r10": 1.0,
+        "mrr": 1.0,
+        "p5_max": 1.0,
+        "r10_max": 1.0
+      },
+      {
+        "q": "bengali makeup artist",
+        "category": "makeup",
+        "style": "bengali",
+        "city": "Mumbai",
+        "budget_max": null,
+        "kind": "city",
+        "n_relevant": 1,
+        "p5": 0.2,
+        "p5_capped": 1.0,
+        "r10": 1.0,
+        "mrr": 1.0,
+        "p5_max": 0.2,
+        "r10_max": 1.0
+      },
+      {
+        "q": "hd makeup artist",
+        "category": "makeup",
+        "style": "hd",
+        "city": "Patna",
+        "budget_max": null,
+        "kind": "city",
+        "n_relevant": 1,
+        "p5": 0.2,
+        "p5_capped": 1.0,
+        "r10": 1.0,
+        "mrr": 1.0,
+        "p5_max": 0.2,
+        "r10_max": 1.0
+      },
+      {
+        "q": "minimal mehendi artist",
+        "category": "mehendi_artist",
+        "style": "minimal",
+        "city": null,
+        "budget_max": null,
+        "kind": "national",
+        "n_relevant": 21,
+        "p5": 1.0,
+        "p5_capped": 1.0,
+        "r10": 0.47619047619047616,
+        "mrr": 1.0,
+        "p5_max": 1.0,
+        "r10_max": 0.47619047619047616
+      },
+      {
+        "q": "portrait mehendi artist",
+        "category": "mehendi_artist",
+        "style": "portrait",
+        "city": null,
+        "budget_max": null,
+        "kind": "national",
+        "n_relevant": 13,
+        "p5": 1.0,
+        "p5_capped": 1.0,
+        "r10": 0.7692307692307693,
+        "mrr": 1.0,
+        "p5_max": 1.0,
+        "r10_max": 0.7692307692307693
+      },
+      {
+        "q": "rajasthani mehendi artist",
+        "category": "mehendi_artist",
+        "style": "rajasthani",
+        "city": null,
+        "budget_max": null,
+        "kind": "national",
+        "n_relevant": 19,
+        "p5": 1.0,
+        "p5_capped": 1.0,
+        "r10": 0.5263157894736842,
+        "mrr": 1.0,
+        "p5_max": 1.0,
+        "r10_max": 0.5263157894736842
+      },
+      {
+        "q": "bridal mehendi artist",
+        "category": "mehendi_artist",
+        "style": "bridal",
+        "city": null,
+        "budget_max": 33000,
+        "kind": "national+budget",
+        "n_relevant": 7,
+        "p5": 0.8,
+        "p5_capped": 0.8,
+        "r10": 1.0,
+        "mrr": 1.0,
+        "p5_max": 1.0,
+        "r10_max": 1.0
+      },
+      {
+        "q": "arabic mehendi artist",
+        "category": "mehendi_artist",
+        "style": "arabic",
+        "city": "Delhi",
+        "budget_max": null,
+        "kind": "city",
+        "n_relevant": 3,
+        "p5": 0.6,
+        "p5_capped": 1.0,
+        "r10": 1.0,
+        "mrr": 1.0,
+        "p5_max": 0.6,
+        "r10_max": 1.0
+      },
+      {
+        "q": "bridal mehendi artist",
+        "category": "mehendi_artist",
+        "style": "bridal",
+        "city": "Patna",
+        "budget_max": null,
+        "kind": "city",
+        "n_relevant": 3,
+        "p5": 0.6,
+        "p5_capped": 1.0,
+        "r10": 1.0,
+        "mrr": 1.0,
+        "p5_max": 0.6,
+        "r10_max": 1.0
+      },
+      {
+        "q": "live band DJ",
+        "category": "dj",
+        "style": "live-band",
+        "city": null,
+        "budget_max": null,
+        "kind": "national",
+        "n_relevant": 15,
+        "p5": 0.8,
+        "p5_capped": 0.8,
+        "r10": 0.4666666666666667,
+        "mrr": 1.0,
+        "p5_max": 1.0,
+        "r10_max": 0.6666666666666666
+      },
+      {
+        "q": "sufi DJ",
+        "category": "dj",
+        "style": "sufi",
+        "city": null,
+        "budget_max": null,
+        "kind": "national",
+        "n_relevant": 15,
+        "p5": 1.0,
+        "p5_capped": 1.0,
+        "r10": 0.6666666666666666,
+        "mrr": 1.0,
+        "p5_max": 1.0,
+        "r10_max": 0.6666666666666666
+      },
+      {
+        "q": "punjabi DJ",
+        "category": "dj",
+        "style": "punjabi",
+        "city": null,
+        "budget_max": null,
+        "kind": "national",
+        "n_relevant": 13,
+        "p5": 1.0,
+        "p5_capped": 1.0,
+        "r10": 0.7692307692307693,
+        "mrr": 1.0,
+        "p5_max": 1.0,
+        "r10_max": 0.7692307692307693
+      },
+      {
+        "q": "bollywood DJ",
+        "category": "dj",
+        "style": "bollywood",
+        "city": null,
+        "budget_max": 116000,
+        "kind": "national+budget",
+        "n_relevant": 9,
+        "p5": 1.0,
+        "p5_capped": 1.0,
+        "r10": 0.8888888888888888,
+        "mrr": 1.0,
+        "p5_max": 1.0,
+        "r10_max": 1.0
+      },
+      {
+        "q": "dhol DJ",
+        "category": "dj",
+        "style": "dhol",
+        "city": "Kolkata",
+        "budget_max": null,
+        "kind": "city",
+        "n_relevant": 2,
+        "p5": 0.4,
+        "p5_capped": 1.0,
+        "r10": 1.0,
+        "mrr": 1.0,
+        "p5_max": 0.4,
+        "r10_max": 1.0
+      },
+      {
+        "q": "edm DJ",
+        "category": "dj",
+        "style": "edm",
+        "city": "Jaipur",
+        "budget_max": null,
+        "kind": "city",
+        "n_relevant": 3,
+        "p5": 0.6,
+        "p5_capped": 1.0,
+        "r10": 1.0,
+        "mrr": 1.0,
+        "p5_max": 0.6,
+        "r10_max": 1.0
+      },
+      {
+        "q": "north indian pandit",
+        "category": "pandit",
+        "style": "north-indian",
+        "city": null,
+        "budget_max": null,
+        "kind": "national",
+        "n_relevant": 13,
+        "p5": 1.0,
+        "p5_capped": 1.0,
+        "r10": 0.46153846153846156,
+        "mrr": 1.0,
+        "p5_max": 1.0,
+        "r10_max": 0.7692307692307693
+      },
+      {
+        "q": "vedic pandit",
+        "category": "pandit",
+        "style": "vedic",
+        "city": null,
+        "budget_max": null,
+        "kind": "national",
+        "n_relevant": 18,
+        "p5": 1.0,
+        "p5_capped": 1.0,
+        "r10": 0.5555555555555556,
+        "mrr": 1.0,
+        "p5_max": 1.0,
+        "r10_max": 0.5555555555555556
+      },
+      {
+        "q": "bengali pandit",
+        "category": "pandit",
+        "style": "bengali",
+        "city": null,
+        "budget_max": null,
+        "kind": "national",
+        "n_relevant": 19,
+        "p5": 1.0,
+        "p5_capped": 1.0,
+        "r10": 0.5263157894736842,
+        "mrr": 1.0,
+        "p5_max": 1.0,
+        "r10_max": 0.5263157894736842
+      },
+      {
+        "q": "south indian pandit",
+        "category": "pandit",
+        "style": "south-indian",
+        "city": null,
+        "budget_max": 45000,
+        "kind": "national+budget",
+        "n_relevant": 11,
+        "p5": 1.0,
+        "p5_capped": 1.0,
+        "r10": 0.7272727272727273,
+        "mrr": 1.0,
+        "p5_max": 1.0,
+        "r10_max": 0.9090909090909091
+      },
+      {
+        "q": "vedic pandit",
+        "category": "pandit",
+        "style": "vedic",
+        "city": "Bengaluru",
+        "budget_max": null,
+        "kind": "city",
+        "n_relevant": 2,
+        "p5": 0.4,
+        "p5_capped": 1.0,
+        "r10": 1.0,
+        "mrr": 1.0,
+        "p5_max": 0.4,
+        "r10_max": 1.0
+      },
+      {
+        "q": "south indian pandit",
+        "category": "pandit",
+        "style": "south-indian",
+        "city": "Hyderabad",
+        "budget_max": null,
+        "kind": "city",
+        "n_relevant": 1,
+        "p5": 0.2,
+        "p5_capped": 1.0,
+        "r10": 1.0,
+        "mrr": 0.3333333333333333,
+        "p5_max": 0.2,
+        "r10_max": 1.0
+      },
+      {
+        "q": "jain catering",
+        "category": "caterer",
+        "style": "jain",
+        "city": null,
+        "budget_max": null,
+        "kind": "national",
+        "n_relevant": 5,
+        "p5": 1.0,
+        "p5_capped": 1.0,
+        "r10": 1.0,
+        "mrr": 1.0,
+        "p5_max": 1.0,
+        "r10_max": 1.0
+      },
+      {
+        "q": "pastel decor",
+        "category": "decorator",
+        "style": "pastel",
+        "city": null,
+        "budget_max": null,
+        "kind": "national",
+        "n_relevant": 9,
+        "p5": 1.0,
+        "p5_capped": 1.0,
+        "r10": 1.0,
+        "mrr": 1.0,
+        "p5_max": 1.0,
+        "r10_max": 1.0
+      }
+    ]
+  },
+  "contracts": {
+    "overall": {
+      "contracts": 12,
+      "field_accuracy": 0.7604166666666666,
+      "fields_scored": 96,
+      "per_field": {
+        "advance_percent": 0.5833333333333334,
+        "advance_refundable": 0.6666666666666666,
+        "has_payment_schedule": 0.5833333333333334,
+        "has_cancellation": 0.8333333333333334,
+        "has_refund": 0.9166666666666666,
+        "has_liability": 0.9166666666666666,
+        "has_force_majeure": 0.9166666666666666,
+        "has_deliverables": 0.6666666666666666
+      },
+      "risk_precision": 0.7241379310344828,
+      "risk_recall": 0.875,
+      "risk_f1": 0.7924528301886793,
+      "risk_exact_match": 0.5833333333333334,
+      "quote_verification": 1.0
+    },
+    "seed": {
+      "contracts": 5,
+      "field_accuracy": 1.0,
+      "fields_scored": 40,
+      "per_field": {
+        "advance_percent": 1.0,
+        "advance_refundable": 1.0,
+        "has_payment_schedule": 1.0,
+        "has_cancellation": 1.0,
+        "has_refund": 1.0,
+        "has_liability": 1.0,
+        "has_force_majeure": 1.0,
+        "has_deliverables": 1.0
+      },
+      "risk_precision": 1.0,
+      "risk_recall": 1.0,
+      "risk_f1": 1.0,
+      "risk_exact_match": 1.0,
+      "quote_verification": 1.0
+    },
+    "held_out": {
+      "contracts": 7,
+      "field_accuracy": 0.5892857142857143,
+      "fields_scored": 56,
+      "per_field": {
+        "advance_percent": 0.2857142857142857,
+        "advance_refundable": 0.42857142857142855,
+        "has_payment_schedule": 0.2857142857142857,
+        "has_cancellation": 0.7142857142857143,
+        "has_refund": 0.8571428571428571,
+        "has_liability": 0.8571428571428571,
+        "has_force_majeure": 0.8571428571428571,
+        "has_deliverables": 0.42857142857142855
+      },
+      "risk_precision": 0.5789473684210527,
+      "risk_recall": 0.7857142857142857,
+      "risk_f1": 0.6666666666666667,
+      "risk_exact_match": 0.2857142857142857,
+      "quote_verification": 1.0
+    },
+    "contracts": [
+      {
+        "key": "venue_fair",
+        "split": "seed",
+        "field_accuracy": 1.0,
+        "wrong_fields": [],
+        "risk_tp": 0,
+        "risk_fp": [],
+        "risk_fn": [],
+        "risk_exact": true,
+        "quotes": 6,
+        "quotes_verified": 6,
+        "needs_human_review": false,
+        "method": "llm"
+      },
+      {
+        "key": "decor_risky_advance",
+        "split": "seed",
+        "field_accuracy": 1.0,
+        "wrong_fields": [],
+        "risk_tp": 3,
+        "risk_fp": [],
+        "risk_fn": [],
+        "risk_exact": true,
+        "quotes": 5,
+        "quotes_verified": 5,
+        "needs_human_review": false,
+        "method": "llm"
+      },
+      {
+        "key": "photo_no_cancellation",
+        "split": "seed",
+        "field_accuracy": 1.0,
+        "wrong_fields": [],
+        "risk_tp": 2,
+        "risk_fp": [],
+        "risk_fn": [],
+        "risk_exact": true,
+        "quotes": 4,
+        "quotes_verified": 4,
+        "needs_human_review": false,
+        "method": "llm"
+      },
+      {
+        "key": "catering_fair",
+        "split": "seed",
+        "field_accuracy": 1.0,
+        "wrong_fields": [],
+        "risk_tp": 0,
+        "risk_fp": [],
+        "risk_fn": [],
+        "risk_exact": true,
+        "quotes": 6,
+        "quotes_verified": 6,
+        "needs_human_review": false,
+        "method": "llm"
+      },
+      {
+        "key": "dj_injection",
+        "split": "seed",
+        "field_accuracy": 1.0,
+        "wrong_fields": [],
+        "risk_tp": 5,
+        "risk_fp": [],
+        "risk_fn": [],
+        "risk_exact": true,
+        "quotes": 4,
+        "quotes_verified": 4,
+        "needs_human_review": true,
+        "method": "llm"
+      },
+      {
+        "key": "heritage_venue_fair",
+        "split": "held_out",
+        "field_accuracy": 0.125,
+        "wrong_fields": [
+          "advance_percent",
+          "advance_refundable",
+          "has_payment_schedule",
+          "has_cancellation",
+          "has_refund",
+          "has_force_majeure",
+          "has_deliverables"
+        ],
+        "risk_tp": 0,
+        "risk_fp": [
+          "no_cancellation_clause",
+          "no_deliverables",
+          "no_force_majeure",
+          "no_refund_clause"
+        ],
+        "risk_fn": [],
+        "risk_exact": false,
+        "quotes": 1,
+        "quotes_verified": 1,
+        "needs_human_review": false,
+        "method": "llm"
+      },
+      {
+        "key": "decor_forfeit_words",
+        "split": "held_out",
+        "field_accuracy": 0.25,
+        "wrong_fields": [
+          "advance_percent",
+          "advance_refundable",
+          "has_payment_schedule",
+          "has_cancellation",
+          "has_liability",
+          "has_deliverables"
+        ],
+        "risk_tp": 2,
+        "risk_fp": [
+          "no_cancellation_clause",
+          "no_deliverables"
+        ],
+        "risk_fn": [
+          "high_nonrefundable_advance",
+          "one_sided_liability"
+        ],
+        "risk_exact": false,
+        "quotes": 0,
+        "quotes_verified": 0,
+        "needs_human_review": false,
+        "method": "llm"
+      },
+      {
+        "key": "photo_retainer_minimal",
+        "split": "held_out",
+        "field_accuracy": 0.625,
+        "wrong_fields": [
+          "advance_percent",
+          "has_payment_schedule",
+          "has_deliverables"
+        ],
+        "risk_tp": 3,
+        "risk_fp": [
+          "no_deliverables"
+        ],
+        "risk_fn": [],
+        "risk_exact": false,
+        "quotes": 0,
+        "quotes_verified": 0,
+        "needs_human_review": false,
+        "method": "llm"
+      },
+      {
+        "key": "dj_fifty_refundable",
+        "split": "held_out",
+        "field_accuracy": 0.875,
+        "wrong_fields": [
+          "advance_refundable"
+        ],
+        "risk_tp": 0,
+        "risk_fp": [],
+        "risk_fn": [],
+        "risk_exact": true,
+        "quotes": 6,
+        "quotes_verified": 6,
+        "needs_human_review": false,
+        "method": "llm"
+      },
+      {
+        "key": "makeup_sixty_nonrefundable",
+        "split": "held_out",
+        "field_accuracy": 0.75,
+        "wrong_fields": [
+          "advance_percent",
+          "has_payment_schedule"
+        ],
+        "risk_tp": 0,
+        "risk_fp": [],
+        "risk_fn": [
+          "high_nonrefundable_advance"
+        ],
+        "risk_exact": false,
+        "quotes": 5,
+        "quotes_verified": 5,
+        "needs_human_review": false,
+        "method": "llm"
+      },
+      {
+        "key": "pandit_no_deliverables",
+        "split": "held_out",
+        "field_accuracy": 0.625,
+        "wrong_fields": [
+          "advance_percent",
+          "advance_refundable",
+          "has_payment_schedule"
+        ],
+        "risk_tp": 2,
+        "risk_fp": [],
+        "risk_fn": [],
+        "risk_exact": true,
+        "quotes": 2,
+        "quotes_verified": 2,
+        "needs_human_review": false,
+        "method": "llm"
+      },
+      {
+        "key": "caterer_injection",
+        "split": "held_out",
+        "field_accuracy": 0.875,
+        "wrong_fields": [
+          "has_deliverables"
+        ],
+        "risk_tp": 4,
+        "risk_fp": [
+          "no_deliverables"
+        ],
+        "risk_fn": [],
+        "risk_exact": false,
+        "quotes": 2,
+        "quotes_verified": 2,
+        "needs_human_review": true,
+        "method": "llm"
+      }
+    ]
+  },
+  "rsvp": {
+    "import": {
+      "lists": 5,
+      "rows": 563,
+      "report_count_accuracy": 1.0,
+      "guest_field_accuracy": 1.0,
+      "grouping_precision": 1.0,
+      "grouping_recall": 1.0,
+      "per_list": [
+        {
+          "rows": 108,
+          "mismatches": {}
+        },
+        {
+          "rows": 119,
+          "mismatches": {}
+        },
+        {
+          "rows": 112,
+          "mismatches": {}
+        },
+        {
+          "rows": 119,
+          "mismatches": {}
+        },
+        {
+          "rows": 105,
+          "mismatches": {}
+        }
+      ]
+    },
+    "replies": {
+      "replies": 74,
+      "accuracy": 0.8108108108108109,
+      "auto_precision": 0.9215686274509803,
+      "wrong_auto_updates": 4,
+      "auto_coverage": 0.8333333333333334,
+      "review_recall": 0.9285714285714286,
+      "plus_ones_accuracy": 0.9166666666666666,
+      "by_lang": {
+        "en": {
+          "n": 47,
+          "accuracy": 0.7659574468085106
+        },
+        "hi": {
+          "n": 10,
+          "accuracy": 0.9
+        },
+        "hinglish": {
+          "n": 17,
+          "accuracy": 0.8823529411764706
+        }
+      },
+      "errors": [
+        {
+          "text": "Count me in",
+          "lang": "en",
+          "expected": "accepted",
+          "got": "review",
+          "auto": false,
+          "correct": false,
+          "plus_ones_ok": null
+        },
+        {
+          "text": "Happy to attend!",
+          "lang": "en",
+          "expected": "accepted",
+          "got": "review",
+          "auto": false,
+          "correct": false,
+          "plus_ones_ok": null
+        },
+        {
+          "text": "Not coming",
+          "lang": "en",
+          "expected": "declined",
+          "got": "review",
+          "auto": false,
+          "correct": false,
+          "plus_ones_ok": null
+        },
+        {
+          "text": "Can't attend, but sending blessings",
+          "lang": "en",
+          "expected": "declined",
+          "got": "review",
+          "auto": false,
+          "correct": false,
+          "plus_ones_ok": null
+        },
+        {
+          "text": "Depends on my leave, will let you know",
+          "lang": "en",
+          "expected": "maybe",
+          "got": "review",
+          "auto": false,
+          "correct": false,
+          "plus_ones_ok": null
+        },
+        {
+          "text": "Koshish karenge aane ki",
+          "lang": "hinglish",
+          "expected": "maybe",
+          "got": "review",
+          "auto": false,
+          "correct": false,
+          "plus_ones_ok": null
+        },
+        {
+          "text": "abhi pakka nahi hai",
+          "lang": "hinglish",
+          "expected": "maybe",
+          "got": "declined",
+          "auto": true,
+          "correct": false,
+          "plus_ones_ok": null
+        },
+        {
+          "text": "शायद आएंगे",
+          "lang": "hi",
+          "expected": "maybe",
+          "got": "accepted",
+          "auto": true,
+          "correct": false,
+          "plus_ones_ok": null
+        },
+        {
+          "text": "My husband is coming but I can't",
+          "lang": "en",
+          "expected": "review",
+          "got": "accepted",
+          "auto": true,
+          "correct": false,
+          "plus_ones_ok": null
+        },
+        {
+          "text": "Can't wait to come!",
+          "lang": "en",
+          "expected": "accepted",
+          "got": "review",
+          "auto": false,
+          "correct": false,
+          "plus_ones_ok": null
+        },
+        {
+          "text": "No doubt, we'll be there",
+          "lang": "en",
+          "expected": "accepted",
+          "got": "declined",
+          "auto": true,
+          "correct": false,
+          "plus_ones_ok": null
+        },
+        {
+          "text": "We are not coming, sorry",
+          "lang": "en",
+          "expected": "declined",
+          "got": "review",
+          "auto": false,
+          "correct": false,
+          "plus_ones_ok": null
+        },
+        {
+          "text": "Wouldn't miss it",
+          "lang": "en",
+          "expected": "accepted",
+          "got": "review",
+          "auto": false,
+          "correct": false,
+          "plus_ones_ok": null
+        },
+        {
+          "text": "No way we'd skip this, coming!",
+          "lang": "en",
+          "expected": "accepted",
+          "got": "review",
+          "auto": false,
+          "correct": false,
+          "plus_ones_ok": null
+        }
+      ]
+    },
+    "reminders": {
+      "rule": "after 3 days without reply, max 3 reminders",
+      "decisions": 1332,
+      "decision_accuracy": 1.0,
+      "wrongly_sent": 0,
+      "missed": 0,
+      "reminders_sent": 291,
+      "duplicate_sends": 0,
+      "max_per_rsvp_respected": true,
+      "rounds": [
+        {
+          "aged_days": 1,
+          "expected": 0,
+          "reminded": 0,
+          "queued_reported": 0
+        },
+        {
+          "aged_days": 1.5,
+          "expected": 0,
+          "reminded": 0,
+          "queued_reported": 0
+        },
+        {
+          "aged_days": 0,
+          "expected": 0,
+          "reminded": 0,
+          "queued_reported": 0
+        },
+        {
+          "aged_days": 1,
+          "expected": 97,
+          "reminded": 97,
+          "queued_reported": 97
+        },
+        {
+          "aged_days": 3,
+          "expected": 97,
+          "reminded": 97,
+          "queued_reported": 97
+        },
+        {
+          "aged_days": 0,
+          "expected": 0,
+          "reminded": 0,
+          "queued_reported": 0
+        },
+        {
+          "aged_days": 3,
+          "expected": 97,
+          "reminded": 97,
+          "queued_reported": 97
+        },
+        {
+          "aged_days": 3,
+          "expected": 0,
+          "reminded": 0,
+          "queued_reported": 0
+        },
+        {
+          "aged_days": 3,
+          "expected": 0,
+          "reminded": 0,
+          "queued_reported": 0
+        }
+      ]
+    },
+    "quiet_hours_rule": {
+      "config": "21:00-09:00 Asia/Kolkata",
+      "matches_spec": true,
+      "timestamps": 10080,
+      "accuracy": 1.0
+    },
+    "quiet_hours_dispatch": {
+      "queued": 40,
+      "sent_during_quiet_hours": 0,
+      "deferred_until": "2026-10-19T05:33:00+05:30"
+    }
+  },
+  "latency": {
+    "target_p95_ms": 2000.0,
+    "all_meet_target": true,
+    "worst_p95_ms": 380.1714159999392,
+    "endpoints": [
+      {
+        "endpoint": "POST /auth/login",
+        "n": 60,
+        "mean_ms": 123.36340371666665,
+        "p50_ms": 117.06718999994337,
+        "p95_ms": 167.83035800108337,
+        "p99_ms": 184.65476100027445,
+        "max_ms": 184.65476100027445,
+        "meets_target": true
+      },
+      {
+        "endpoint": "GET /weddings",
+        "n": 60,
+        "mean_ms": 9.263160083264665,
+        "p50_ms": 9.032422000018414,
+        "p95_ms": 12.324332999924081,
+        "p99_ms": 12.879300000349758,
+        "max_ms": 12.879300000349758,
+        "meets_target": true
+      },
+      {
+        "endpoint": "GET /weddings/{id}/overview",
+        "n": 60,
+        "mean_ms": 22.723739383400243,
+        "p50_ms": 22.569356000531116,
+        "p95_ms": 29.419443000733736,
+        "p99_ms": 34.62374099945009,
+        "max_ms": 34.62374099945009,
+        "meets_target": true
+      },
+      {
+        "endpoint": "GET /vendors/search (hybrid)",
+        "n": 60,
+        "mean_ms": 125.20912804993714,
+        "p50_ms": 102.25112499938405,
+        "p95_ms": 233.65512899908936,
+        "p99_ms": 549.6360670003924,
+        "max_ms": 549.6360670003924,
+        "meets_target": true
+      },
+      {
+        "endpoint": "GET /vendors/benchmark",
+        "n": 60,
+        "mean_ms": 13.785490133098694,
+        "p50_ms": 12.556866999148042,
+        "p95_ms": 20.74409399938304,
+        "p99_ms": 20.942240000294987,
+        "max_ms": 20.942240000294987,
+        "meets_target": true
+      },
+      {
+        "endpoint": "GET /weddings/{id}/guests",
+        "n": 60,
+        "mean_ms": 33.89925533335069,
+        "p50_ms": 29.141455999706523,
+        "p95_ms": 41.63217799941776,
+        "p99_ms": 292.52568500123743,
+        "max_ms": 292.52568500123743,
+        "meets_target": true
+      },
+      {
+        "endpoint": "GET /weddings/{id}/attendance",
+        "n": 60,
+        "mean_ms": 64.78706118317253,
+        "p50_ms": 43.29234999931941,
+        "p95_ms": 304.4596999989153,
+        "p99_ms": 314.67140300082974,
+        "max_ms": 314.67140300082974,
+        "meets_target": true
+      },
+      {
+        "endpoint": "GET /weddings/{id}/timeline",
+        "n": 60,
+        "mean_ms": 14.93156456669264,
+        "p50_ms": 14.430757999434718,
+        "p95_ms": 19.031107000046177,
+        "p99_ms": 20.098265000342508,
+        "max_ms": 20.098265000342508,
+        "meets_target": true
+      },
+      {
+        "endpoint": "GET /weddings/{id}/budget",
+        "n": 60,
+        "mean_ms": 12.804820133169414,
+        "p50_ms": 12.656099999730941,
+        "p95_ms": 15.659102999052266,
+        "p99_ms": 17.235228999197716,
+        "max_ms": 17.235228999197716,
+        "meets_target": true
+      },
+      {
+        "endpoint": "GET /weddings/{id}/budget/forecast",
+        "n": 60,
+        "mean_ms": 12.62789381659483,
+        "p50_ms": 12.202324000099907,
+        "p95_ms": 16.13946900033625,
+        "p99_ms": 18.1735629994364,
+        "max_ms": 18.1735629994364,
+        "meets_target": true
+      },
+      {
+        "endpoint": "GET /approvals",
+        "n": 60,
+        "mean_ms": 9.378919183169879,
+        "p50_ms": 9.156273999906261,
+        "p95_ms": 11.343165000653244,
+        "p99_ms": 12.229353998918668,
+        "max_ms": 12.229353998918668,
+        "meets_target": true
+      },
+      {
+        "endpoint": "GET /agent-actions",
+        "n": 60,
+        "mean_ms": 9.348792749824497,
+        "p50_ms": 9.166770998490392,
+        "p95_ms": 12.599384999703034,
+        "p99_ms": 15.565522000542842,
+        "max_ms": 15.565522000542842,
+        "meets_target": true
+      },
+      {
+        "endpoint": "POST /weddings/{id}/agents/run",
+        "n": 60,
+        "mean_ms": 128.84131693326708,
+        "p50_ms": 88.51608899931307,
+        "p95_ms": 380.1714159999392,
+        "p99_ms": 381.4118899990717,
+        "max_ms": 381.4118899990717,
+        "meets_target": true
+      }
+    ]
+  },
+  "cost": {
+    "workload": {
+      "guests": 200,
+      "replies": 267,
+      "contracts": 8,
+      "contract_analyses": 10
+    },
+    "llm_calls": 84,
+    "by_task": {
+      "contract_analysis": {
+        "calls": 10,
+        "model": "google/gemini-3.1-pro-preview",
+        "tokens_in": 59626,
+        "tokens_out": 4182,
+        "cost_inr": 14.9103
+      },
+      "guest_comm": {
+        "calls": 74,
+        "model": "google/gemini-3.5-flash-lite",
+        "tokens_in": 10997,
+        "tokens_out": 1036,
+        "cost_inr": 0.5183
+      }
+    },
+    "cost_inr": 15.4286,
+    "worst_case_inr": 94.5086,
+    "worst_case_by_task": {
+      "guest_comm": 15.9666,
+      "contract_analysis": 78.542
+    },
+    "target_inr": 300,
+    "meets_target": true,
+    "worst_case_meets_target": true
+  },
+  "meta": {
+    "generated_at": "2026-10-18T23:04:33+00:00",
+    "commit": "2cd11ad",
+    "database": "wedding_eval",
+    "embedding_provider": "sentence_transformers",
+    "llm": "mock (offline; rule-based extractors, token counts priced at real model rates)",
+    "seed": {
+      "organizations": 2,
+      "vendors": 318,
+      "weddings": 3,
+      "guests": 595,
+      "contracts": 5
+    },
+    "timings_s": {
+      "seed": 27.724278540999876,
+      "vendor_matching": 5.713670760000241,
+      "contracts": 1.3176773369996226,
+      "rsvp": 17.363236430999677,
+      "latency": 39.05618732699986,
+      "cost": 26.619762888998594
+    }
+  }
+}

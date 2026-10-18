@@ -51,7 +51,7 @@ test-e2e: ## Playwright flows (needs `make up` + `make seed`)
 	$(FRONTEND) npx playwright test
 
 lint: ## ruff + eslint + prettier
-	$(BACKEND) $(UV) run ruff check . && $(UV) run ruff format --check .
+	$(BACKEND) $(UV) run ruff check . ../eval && $(UV) run ruff format --check . ../eval
 	$(FRONTEND) npm run lint
 
 format: ## Auto-format everything
@@ -59,15 +59,15 @@ format: ## Auto-format everything
 	$(FRONTEND) npm run format
 
 typecheck: ## mypy (strict on domain/services) + tsc --noEmit
-	$(BACKEND) $(UV) run mypy
+	$(BACKEND) $(UV) run mypy && $(UV) run mypy ../eval
 	$(FRONTEND) npm run typecheck
 
 gen-client: ## Export OpenAPI and regenerate the typed frontend client
 	$(BACKEND) $(UV) run python -m app.export_openapi openapi.json
 	$(FRONTEND) npm run gen:api
 
-eval: ## Offline evaluation suite -> eval/reports/REPORT.md
-	$(BACKEND) $(UV) run python -m eval.run_all
+eval: infra ## Offline evaluation suite (own fresh DB) -> eval/reports/REPORT.md
+	$(BACKEND) PYTHONPATH=.. $(UV) run python -m eval.run_all
 
 clean:
 	rm -rf backend/.pytest_cache backend/.mypy_cache backend/.ruff_cache frontend/dist

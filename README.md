@@ -24,7 +24,7 @@ The build follows three phases (see [`docs/BUILD_PROMPT.md`](docs/BUILD_PROMPT.m
 | **1 – MVP** | Repo tooling, Docker stack, FastAPI `/api/v1`, health checks, RFC 9457 errors, multi-tenancy, JWT + RBAC, models + migrations, seed data, vendor search, guest import, timeline templates, mock LLM/messaging, generated TS client, React dashboard | ✅ Implemented |
 | **2 – Learning** | Multilingual embeddings + hybrid RRF search with explanations, price benchmarks, contract analysis with quote verification, budget forecast model, transactional outbox + dispatcher, idempotent webhooks/endpoints, templates + reminder rules, OpenRouter client + model router + cost logging, token budgets | ✅ Implemented |
 | **3 – Autonomous** | Temporal workflows, `ActionPolicy` autonomy tiers, approval queue, audit log + rollback, agents + orchestrator, auto-fixes within limits, Prometheus `/metrics`, Sentry hook, Approvals and Activity pages | ✅ Implemented |
-| **Eval** | `eval/` offline scripts: precision@5 / recall@10, contract field accuracy, RSVP correctness, p95 latency, cost per wedding | 🚧 Not started |
+| **Eval** | `eval/` offline scripts: precision@5 / recall@10, contract field accuracy, RSVP correctness, p95 latency, cost per wedding | ✅ Implemented ([report](eval/reports/REPORT.md)) |
 
 ---
 
@@ -258,7 +258,24 @@ make infra            # start postgres, redis, minio
 make test-backend     # uv run pytest -q
 make test-frontend    # vitest
 make lint typecheck
+make eval             # offline evaluation -> eval/reports/REPORT.md
 ```
+
+### Evaluation
+
+`make eval` creates its own `wedding_eval` database, migrates it, loads the deterministic seed and runs offline. It takes about 2 minutes and writes [`eval/reports/REPORT.md`](eval/reports/REPORT.md) and `results.json`. Latest results:
+
+| Area | Result | Target |
+|---|---|---|
+| Vendor matching (50 labelled queries) | precision@5 0.78 (best possible 0.79), recall@10 0.87 (best possible 0.89), MRR 0.99 | – |
+| Contract extraction | 100% field accuracy on the 5 seed contracts, 59% on 7 held-out contracts; quotes 100% verified | – |
+| RSVP import (563 rows, 5 lists) | 100% of report counts and stored fields correct | – |
+| RSVP replies (74 hand-labelled, EN/Hinglish/HI) | 81% accuracy; 92% precision on automatic updates | – |
+| Reminders / quiet hours | 1,332/1,332 reminder decisions correct; 0 messages sent in quiet hours | 100% / 0 |
+| API latency (13 endpoints) | worst p95 380 ms | < 2 s ✅ |
+| LLM cost per wedding | ₹15 (worst case ₹95) | < ₹300 ✅ |
+
+How labels are built, what each number means and the limits are in the report. Vendor ids are random UUIDs that break ranking ties, so retrieval metrics can move by about ±0.01 between runs.
 
 | Suite | Covers |
 |---|---|
@@ -284,7 +301,7 @@ make lint typecheck
 ├── frontend/           React + TypeScript + Vite dashboard (generated API client in src/api)
 ├── config/             models.yaml, policy.yaml, message_templates.yaml, timeline_templates.yaml
 ├── docs/BUILD_PROMPT.md  scope / source of truth
-├── eval/               offline evaluation (to do)
+├── eval/               offline evaluation suite + reports/REPORT.md
 ├── DECISIONS.md        assumptions and deviations
 ├── docker-compose.yml  the whole stack
 └── Makefile            dev entry points
@@ -306,7 +323,7 @@ make lint typecheck
 
 ## Known limitations
 
-- **The `eval/` scripts and report don't exist yet.**
+- **Offline eval measures the rule-based paths.** Without an API key, contract extraction and reply reading run on the rule-based fallbacks. On held-out contracts with unfamiliar headings, the fallback reaches only ~59% field accuracy. A real model would need its own eval run.
 - **Some UI is missing.** There's no dashboard page yet for contract upload. The contract endpoints exist in the API.
 - **Playwright runs only locally.** CI runs the backend and Vitest suites but not the Playwright flows, which need the full stack.
 - **Workflows of deleted weddings linger.** After `make seed` (which wipes and reloads), the old weddings' Temporal workflows keep running until their next scheduled run (every 6 h by default), then end because the wedding is gone.

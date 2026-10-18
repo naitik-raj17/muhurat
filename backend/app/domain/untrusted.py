@@ -11,12 +11,14 @@ from __future__ import annotations
 import re
 from dataclasses import dataclass
 
+# Gaps between keywords are bounded but may cross a line break: PDF text extraction wraps long
+# lines, and "ignore all previous\ninstructions" must not slip through.
 _PATTERNS: list[tuple[str, re.Pattern[str]]] = [
     (
         "override_instructions",
         re.compile(
-            r"\b(ignore|disregard|forget|override)\b[^.\n]{0,40}"
-            r"\b(previous|prior|above|earlier|all|system)\b[^.\n]{0,20}\b(instructions?|prompts?|rules?)\b",
+            r"\b(ignore|disregard|forget|override)\b[^.]{0,40}"
+            r"\b(previous|prior|above|earlier|all|system)\b[^.]{0,20}\b(instructions?|prompts?|rules?)\b",
             re.IGNORECASE,
         ),
     ),
@@ -35,13 +37,13 @@ _PATTERNS: list[tuple[str, re.Pattern[str]]] = [
     (
         "action_request",
         re.compile(
-            r"\b(approve|execute|release|transfer)\b[^.\n]{0,30}\b(payment|contract|refund|funds)\b",
+            r"\b(approve|execute|release|transfer)\b[^.]{0,30}\b(payment|contract|refund|funds)\b",
             re.IGNORECASE,
         ),
     ),
     (
         "risk_suppression",
-        re.compile(r"\bmark (this|the) [\w ]{0,20}as (low[- ]risk|safe|approved)\b", re.I),
+        re.compile(r"\bmark\s+(this|the)\s+[\w\s]{0,20}as\s+(low[- ]risk|safe|approved)\b", re.I),
     ),
     # Hindi: "ignore previous instructions" / "निर्देशों को अनदेखा करें"
     # (Devanagari vowel signs are combining marks, which \w does not match.)
